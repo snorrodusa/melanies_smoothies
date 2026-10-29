@@ -34,7 +34,7 @@ if ingredients_list:
         ingredients_string += fruit + ' '
 
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit, 'SEARCH_ON'].iloc[0]
-        st.write('The search value for ', fruit,' is ', search_on, '.')
+        # st.write('The search value for ', fruit,' is ', search_on, '.')
       
         st.subheader(fruit + ' Nutrition Information')
         url = "https://my.smoothiefroot.com/api/fruit/" + search_on
@@ -46,7 +46,7 @@ if ingredients_list:
     my_insert_stmt = """ insert into SMOOTHIES.public.orders(ingredients, name_on_order) 
                       values('""" + ingredients_string + """',""" + chr(39) + name_on_order + chr(39) + ")"
 
-    st.write(my_insert_stmt)
+    # st.write(my_insert_stmt)
     time_to_insert = st.button('Submit Order')
 
     if time_to_insert:
